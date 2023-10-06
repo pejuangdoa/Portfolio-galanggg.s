@@ -18,7 +18,7 @@ window.onscroll = () => {
           let height = sec.offsetHeight;
           let id = sec.getAttribute('id');
 
-          if(top >= offset && top < offset + height) {
+          if (top >= offset && top < offset + height) {
                // active navbar links
                navLinks.forEach(links => {
                     links.classList.remove('active')
@@ -36,3 +36,45 @@ window.onscroll = () => {
      navbar.classList.remove('active');
 }
 
+// email js start
+function validate() {
+     let name = document.querySelector(".name");
+     let email = document.querySelector(".email");
+     let msg = document.querySelector(".message");
+     let sendBtn = document.querySelector(".send-btn");
+
+     sendBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (name.value == "" || email.value == "" || msg.value == "") {
+               emptyerror();
+          } else {
+               sendmail(name.value, email.value, msg.value);
+               success();
+          }
+     });
+}
+validate();
+
+function sendmail(name, email, msg) {
+     emailjs.send("service_7qu6mdj", "template_6nmtq7o", {
+          from_name: email,
+          to_name: name,
+          message: msg,
+     });
+}
+
+function emptyerror() {
+     swal({
+          title: "Ohh Tidakk.....",
+          text: "Sepertinya kamu belum mengisi apa apa:(",
+          icon: "error",
+     });
+}
+
+function success() {
+     swal({
+          title: "Pesan Berhasil Terkirim",
+          text: "Mohon tunggu dalam beberapa saat:)",
+          icon: "success",
+     });
+}
