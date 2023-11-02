@@ -7,6 +7,13 @@ menuIcon.onclick = () => {
      navbar.classList.toggle('active');
 }
 
+/* ----------------------------- project onclick ---------------------------- */
+var Project = document.querySelector('.project');
+
+Project.onclick = () => {
+     alert('Mohon maaf halaman ini sedang dalam tahap perkembangan :)')
+}
+
 /* ----------------------------- scroll sections ---------------------------- */
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a')

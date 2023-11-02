@@ -214,7 +214,7 @@ var Snake = (function () {
                if (stopped) {
                     ctx.fillStyle = 'rgba(250,250,250,0.8)';
                     ctx.font = "small-caps bold 14px Helvetica";
-                    ctx.fillText("press ARROW KEYS to START...", 24, 374);
+                    ctx.fillText("Tekan tombol untuk memulai permainan...", 24, 374);
                }
 
                ctx.fillStyle = 'white';
