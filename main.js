@@ -1,11 +1,20 @@
-/* --------------------------- toogle icon navbar --------------------------- */
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+const showMenu = (toggleId, navId) => {
+     const toggle = document.getElementById(toggleId),
+          nav = document.getElementById(navId)
 
-menuIcon.onclick = () => {
-     menuIcon.classList.toggle('bx-x');
-     navbar.classList.toggle('active');
+     toggle.addEventListener('click', () => {
+
+          nav.classList.toggle('show-menu')
+
+          toggle.classList.toggle('show-icon')
+     })
 }
+
+showMenu('nav-toggle', 'nav-menu')
+
+
+
+
 
 /* ----------------------------- project onclick ---------------------------- */
 var Project = document.querySelector('.project');

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <style>
+          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+          * {
+               box-sizing: border-box;
+               font-family: 'Poppins', sans-serif;
+               padding: 0;
+               margin: 0;
+               text-decoration: none;
+          }
+
+          :root {
+               --header-height: 3.5rem;
+
+               --bg-color: #081b29;
+               --black-color: #081b29;
+
+               --main-color: #00abf0;
+               --black-color-light: #00abf0;
+
+               --second-bg-color: #112e42;
+               --black-color-lighten: #112e42;
+               --white-color: #fff;
+               --body-color: hsl(220, 100%, 97%);
+
+               --normal-font-size: .998rem;
+               --font-regular: 400;
+               --font-semi-bold: 600;
+
+               --z-tooltip: 10;
+               --z-fixed: 100;
+          }
+
+          @media screen and (min-width: 1024px) {
+               :root {
+                    --normal-font-size: 1rem;
+               }
+          }
+
+          ul {
+               list-style: none;
+          }
+
+          .nav-container {
+               max-width: 1120px;
+               margin-inline: 1.5rem;
+          }
+
+          .header {
+               position: fixed;
+               top: 0;
+               left: 0;
+               width: 100%;
+               background: var(--black-color);
+               box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+               z-index: var(--z-fixed);
+               transition: .3s;
+          }
+
+          .nav {
+               height: var(--header-height);
+          }
+
+          .nav__logo,
+          .nav__burger,
+          .nav__close {
+               color: var(--white-color);
+               /* animation-delay: .6s; */
+          }
+
+          .nav__data {
+               height: 100%;
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+          }
+
+          .nav__logo {
+               display: inline-flex;
+               align-items: center;
+               column-gap: .25rem;
+               font-weight: var(--font-semi-bold);
+          }
+
+          .nav__logo i {
+               font-weight: initial;
+               font-size: 1.25rem;
+          }
+
+          .nav__toggle {
+               position: relative;
+               width: 32px;
+               height: 32px;
+               /* background-color: gray; */
+          }
+
+          .nav__burger,
+          .nav__close {
+               position: absolute;
+               width: max-content;
+               height: max-content;
+               inset: 0;
+               margin: auto;
+               font-size: 1.25rem;
+               cursor: pointer;
+               transition: opacity .1s, transform .4s;
+          }
+
+          .nav__close {
+               opacity: 0;
+          }
+
+
+          /* NAVIGATION FOR MOBILE */
+          @media screen and (max-width: 1117px) {
+               .nav__menu {
+                    position: absolute;
+                    left: 0;
+                    top: 2.5rem;
+                    width: 100%;
+                    height: calc(100vh - 3.5rem);
+                    overflow: auto;
+                    pointer-events: none;
+                    opacity: 0;
+                    transition: top .4s opacity .3s;
+               }
+
+               .nav__menu::-webkit-scrollbar {
+                    width: 0;
+               }
+
+               .nav__list {
+                    background-color: var(--black-color);
+                    padding-top: 1rem;
+               }
+          }
+
+          .nav__link {
+               cursor: pointer;
+               color: var(--white-color);
+               background-color: var(--black-color);
+               font-weight: var(--font-semi-bold);
+               padding: 1.25rem 1.5rem;
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               transition: background-color .3s;
+          }
+
+          .nav__link:hover {
+               background-color: var(--black-color-light);
+          }
+
+          .show-menu {
+               opacity: 1;
+               top: 3.5rem;
+               pointer-events: initial;
+          }
+
+          .show-icon .nav__burger {
+               opacity: 0;
+               transform: rotate(90deg);
+          }
+
+          .show-icon .nav__close {
+               opacity: 1;
+               transform: rotate(90deg);
+          }
+
+          .dropdown__item {
+               cursor: pointer;
+          }
+
+          .dropdown__arrow {
+               font-size: 1.25rem;
+               font-weight: initial;
+               transition: transform .4s;
+          }
+
+          .dropdown__link,
+          .dropdown__sublink {
+               padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+               color: var(--white-color);
+               background-color: var(--black-color-lighten);
+               display: flex;
+               align-items: center;
+               column-gap: .5rem;
+               font-weight: var(--font-semi-bold);
+               transition: background-color .3s;
+          }
+
+          .dropdown__link i,
+          .dropdown__sublink i {
+               font-size: 1.25rem;
+               font-weight: initial;
+          }
+
+          .dropdown__link:hover,
+          .dropdown__sublink:hover {
+               background-color: var(--black-color);
+          }
+
+          .dropdown__menu,
+          .dropdown__submenu {
+               max-height: 0;
+               overflow: hidden;
+               transition: max-height .4s ease-out;
+          }
+
+          .dropdown__item:hover .dropdown__menu,
+          .dropdown__subitem:hover .dropdown__submenu {
+               max-height: 1000px;
+               transition: max-height 1s ease-in;
+          }
+
+          .dropdown__item:hover .dropdown__arrow,
+          .dropdown__link:hover .dropdown__add {
+               transform: rotate(180deg);
+               transition: transform 1s;
+          }
+
+
+          .dropdown__add {
+               margin-left: auto;
+          }
+
+          .dropdown__sublink {
+               background-color: var(--black-color-lighten);
+          }
+
+          @media screen and (max-width: 340px) {
+               .nav-container {
+                    margin-inline: 1rem;
+               }
+
+               .nav__link {
+                    padding-inline: 1rem;
+               }
+          }
+
+          @media screen and (min-width: 1118px) {
+               .nav-container {
+                    margin-inline: auto;
+               }
+
+               .nav {
+                    height: calc(var(--header-height) + 2rem);
+                    display: flex;
+                    justify-content: space-between;
+               }
+
+               .nav__toggle {
+                    display: none;
+               }
+
+               .nav__list {
+                    height: 100%;
+                    display: flex;
+                    column-gap: 3rem;
+               }
+
+               .nav__link {
+                    height: 100%;
+                    padding: 0;
+                    justify-content: initial;
+                    column-gap: .25rem;
+               }
+
+               .nav__link:hover {
+                    background-color: transparent;
+               }
+
+               .dropdown__item,
+               .dropdown__subitem {
+                    position: relative;
+               }
+
+               .dropdown__menu {
+                    width: 12rem;
+               }
+
+               .dropdown__menu,
+               .dropdown__submenu {
+                    max-height: initial;
+                    overflow: initial;
+                    position: absolute;
+                    left: 0;
+                    top: 6rem;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: opacity .3s, top .3s;
+               }
+
+               .dropdown__link,
+               .dropdown__sublink {
+                    padding-inline: 1rem 3.5rem;
+               }
+
+               .dropdown__subitem .dropdown__link {
+                    padding-inline: 1rem;
+               }
+
+               .dropdown__submenu {
+                    position: absolute;
+                    width: 10rem;
+                    left: 100%;
+                    top: .5rem;
+               }
+
+               .dropdown__item:hover .dropdown__menu {
+                    opacity: 1;
+                    top: 5.5rem;
+                    pointer-events: initial;
+                    transition: top .3s;
+               }
+
+               .dropdown__subitem:hover .dropdown__submenu {
+                    opacity: 1;
+                    top: 0;
+                    pointer-events: initial;
+                    transition: top .3s;
+               }
+          }
+     </style>
+</head>
+
+<body>
+     <header class="header">
+          <nav class="nav nav-container">
+               <div class="nav__data">
+                    <a href="" class="nav__logo">
+                         GalangSyah <i class='bx bx-planet'></i>
+                    </a>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                         <i class='bx bx-menu nav__burger'></i>
+                         <i class='bx bx-x nav__close'></i>
+                    </div>
+               </div>
+
+               <!-- nav menu -->
+               <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+
+                         <li><a href="#home" class="nav__link">Beranda</a></li>
+
+                         <li><a href="#about" class="nav__link">Tentang</a></li>
+
+                         <!-- Dropdown 1 -->
+                         <li class="dropdown__item">
+                              <div class="nav__link">
+                                   My Games<i class='bx bx-chevron-down dropdown__arrow'></i>
+                              </div>
+
+                              <ul class="dropdown__menu">
+                                   <li>
+                                        <a href="" class="dropdown__link">
+                                             <i class='bx bx-joystick'></i>Game cacing
+                                        </a>
+                                   </li>
+                                   <li>
+                                        <a href="" class="dropdown__link">
+                                             <i class='bx bx-joystick'></i>Game suit
+                                        </a>
+                                   </li>
+
+                                   <!-- ---------------------- My games favorit dropdown ---------------------- -->
+                                   <li class="dropdown__subitem">
+                                        <div class="dropdown__link">
+                                             <i class='bx bx-wink-smile'></i> Recomend <i
+                                                  class='bx bx-plus dropdown__add'></i>
+                                        </div>
+                                        <ul class="dropdown__submenu">
+                                             <li>
+                                                  <a href="" class="dropdown__link">
+                                                       <i class='bx bxs-star'></i> Bird
+                                                  </a>
+                                             </li>
+                                             <li>
+                                                  <a href="" class="dropdown__link">
+                                                       <i class='bx bxs-star'></i>Tic tac toe
+                                                  </a>
+                                             </li>
+                                             <li>
+                                                  <a href="" class="dropdown__link">
+                                                       <i class='bx bxs-star'></i>plane
+                                                  </a>
+                                             </li>
+                                        </ul>
+                                   </li>
+                              </ul>
+                         </li>
+
+                         <li><a href="#" class="nav__link">Gallery</a></li>
+
+                         <li><a href="#" class="nav__link">Project</a></li>
+
+                         <!-- Dropdown 2 -->
+                         <li class="dropdown__item">
+                              <div class="nav__link">
+                                   Lainnya<i class='bx bx-chevron-down dropdown__arrow'></i>
+                              </div>
+
+                              <ul class="dropdown__menu">
+                                   <li>
+                                        <a href="" class="dropdown__link">
+                                             <i class='bx bxs-store'></i> Marketing
+                                        </a>
+                                   </li>
+                                   <li>
+                                        <a href="" class="dropdown__link">
+                                             <i class='bx bxs-institution'></i> School
+                                        </a>
+                                   </li>
+                                   <li>
+                                        <a href="" class="dropdown__link">
+                                             <i class='bx bx-history'></i> PKL sharing
+                                        </a>
+                                   </li>
+                              </ul>
+                         </li>
+
+                         <li><a href="#" class="nav__link">Contact</a></li>
+
+                    </ul>
+               </div>
+
+          </nav>
+     </header>
+
+     </div>
+     </nav>
+     </header>
+
+
+     <!--  -->
+     <script>
+
+          const showMenu = (toggleId, navId) => {
+               const toggle = document.getElementById(toggleId),
+                    nav = document.getElementById(navId)
+
+               toggle.addEventListener('click', () => {
+
+                    nav.classList.toggle('show-menu')
+
+                    toggle.classList.toggle('show-icon')
+               })
+          }
+
+          showMenu('nav-toggle', 'nav-menu')
+     </script>
+</body>
+
+</html>

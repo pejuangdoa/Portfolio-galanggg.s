@@ -4,23 +4,23 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     
+
      <!-- ---------------------------- logo tab web ----------------------------- -->
      <link rel="shortcut icon" href="./assets/instagram.png" type="image/x-icon">
      <!-- ---------------------------- logo tab web ----------------------------- -->
-     
+
      <!-- ------------------------------ Link css ------------------------------- -->
      <link rel="stylesheet" href="style.css">
      <!-- ------------------------------ Link css ------------------------------- -->
-     
+
      <!-- ------------------------------ boxiconss ------------------------------ -->
      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
      <!-- ----------------------------- boxicon end ----------------------------- -->
-     
+
      <!-- ----------------------------- Animate CSS ----------------------------- -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
      <!-- --------------------------- Animate css End --------------------------- -->
-     
+
      <title>galanggg.s_</title>
 </head>
 
@@ -30,20 +30,148 @@
      <!-- ----------------------------------------------------------------------- -->
      <!--                                 navbar                                  -->
      <!-- ----------------------------------------------------------------------- -->
-     <header class="header">
+     <!-- <header class="header">
           <a href="" class="logo animate__animated animate__fadeInLeft">GalangSyah</a>
 
           <div class="bx bx-menu" id="menu-icon"></div>
 
           <nav class="navbar animate__animated animate__fadeInRight" id="navbar">
-               <a href="#home" class="active">Beranda</a>
-               <a href="#about">Tentang</a>
-               <a href="#gallery">Gallery</a>
-               <a href="game.html">Game</a>
-               <a href="#project" class="project">Project</a>
-               <a href="#contact">Kontak</a>
+               <ul>
+                    <li>
+                         <a href="#home" class="active">Beranda</a>
+                    </li>
+                    <li>
+                         <a href="#about">Tentang</a>
+                    </li>
+                    <li>
+                         <a href="#gallery">Gallery </a>
+                    </li>
+                    <li>
+                         <a href="#project" class="project">Project</a>
+                    </li>
+                    <li>
+                         <a href="#contact">Kontak</a>
+                    </li>
+                    <li class="dropdown-items">
+                         <div class="game"> 
+                              <p> My Games <i class='bx bxl-tiktok'></i></p>
+                         </div>
+                         <ul class="dropdown-menu">
+                              <li>
+                                   <a href="" class="dropdown-link">Game 1</a>
+                              </li>
+                              <li>
+                                   <a href="" class="dropdown-link">Game 2</a>
+                              </li>
+                              <li>
+                                   <a href="" class="dropdown-link">Game 3</a>
+                              </li>
+                         </ul>
+                    </li>
+                    <span class="active-nav"></span>
+               </ul>
+          </nav>
+     </header> -->
+     <header class="header">
+          <nav class="nav nav-container">
+               <div class="nav__data">
+                    <a href="" class="nav__logo">
+                         GalangSyah <i class='bx bx-planet'></i>
+                    </a>
 
-               <span class="active-nav"></span>
+                    <div class="nav__toggle" id="nav-toggle">
+                         <i class='bx bx-menu nav__burger'></i>
+                         <i class='bx bx-x nav__close'></i>
+                    </div>
+               </div>
+
+               <!-- nav menu -->
+               <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+
+                         <li><a href="#home" class="nav__link">Beranda</a></li>
+
+                         <li><a href="#about" class="nav__link">Tentang</a></li>
+
+                         <!-- Dropdown 1 -->
+                         <li class="dropdown__item">
+                              <div class="nav__link">
+                                   My Games<i class='bx bx-chevron-down dropdown__arrow'></i>
+                              </div>
+
+                              <ul class="dropdown__menu">
+                                   <li>
+                                        <a href="" class="dropdown__link">
+                                             <i class='bx bx-joystick'></i>Game cacing
+                                        </a>
+                                   </li>
+                                   <li>
+                                        <a href="" class="dropdown__link">
+                                             <i class='bx bx-joystick'></i>Game suit
+                                        </a>
+                                   </li>
+
+                                   <!-- ---------------------- My games favorit dropdown ---------------------- -->
+                                   <li class="dropdown__subitem">
+                                        <div class="dropdown__link">
+                                             <i class='bx bx-wink-smile'></i> Recomend <i
+                                                  class='bx bx-plus dropdown__add'></i>
+                                        </div>
+                                        <ul class="dropdown__submenu">
+                                             <li>
+                                                  <a href="" class="dropdown__link">
+                                                       <i class='bx bxs-star'></i> Bird
+                                                  </a>
+                                             </li>
+                                             <li>
+                                                  <a href="" class="dropdown__link">
+                                                       <i class='bx bxs-star'></i>Tic tac toe
+                                                  </a>
+                                             </li>
+                                             <li>
+                                                  <a href="" class="dropdown__link">
+                                                       <i class='bx bxs-star'></i>plane
+                                                  </a>
+                                             </li>
+                                        </ul>
+                                   </li>
+                              </ul>
+                         </li>
+
+                         <li><a href="#gallery" class="nav__link">Gallery</a></li>
+
+                         <li><a href="#" class="nav__link project">Project</a></li>
+
+                         <!-- Dropdown 2 -->
+                         <li class="dropdown__item">
+                              <div class="nav__link">
+                                   Lainnya<i class='bx bx-chevron-down dropdown__arrow'></i>
+                              </div>
+
+                              <ul class="dropdown__menu">
+                                   <li>
+                                        <a href="" class="dropdown__link">
+                                             <i class='bx bxs-store'></i> Marketing
+                                        </a>
+                                   </li>
+                                   <li>
+                                        <a href="" class="dropdown__link">
+                                             <i class='bx bxs-institution'></i> School
+                                        </a>
+                                   </li>
+                                   <li>
+                                        <a href="" class="dropdown__link">
+                                             <i class='bx bx-history'></i> PKL sharing
+                                        </a>
+                                   </li>
+                              </ul>
+                         </li>
+
+                         <li><a href="#contact" class="nav__link">Contact</a></li>
+
+                    </ul>
+               </div>
+
           </nav>
      </header>
      <!-- ----------------------------------------------------------------------- -->
@@ -56,23 +184,30 @@
      <!-- ----------------------------------------------------------------------- -->
      <section class="home" id="home">
           <div class="home-content animate__animated animate__lightSpeedInLeft animate__delay-1s">
-               <h1 class="text-animate animate__animated animate__lightSpeedInLeft animate__delay-.9s">Hi, My name's<br><span>Galang</span></h1>
+               <h1 class="text-animate animate__animated animate__lightSpeedInLeft animate__delay-.9s">Hi My
+                    Name's<br><span>Galang</span></h1>
                <div class="text-animate animate__animated animate__rollIn animate__delay-1s webdev">
                     <h3>Web Developer cuy.</h3>
                </div>
                <p>Selamat datang di website saya, Terimakasih sudah mau untuk berkunjung! Selebihnya, silahkan berikan
                     kritik dan saran anda terhadap website saya:)</p>
                <div class="btn-box">
-                    <a href="#contact" class="btn animate__animated animate__headShake animate__infinite animate__delay-3s">Contact Me</a>
+                    <a href="#contact"
+                         class="btn animate__animated animate__headShake animate__infinite animate__delay-3s">Contact
+                         Me</a>
                     <a download href="#" class="btn" onclick="alert('Akan segera hadir :)')">Download CV</a>
                </div>
           </div>
 
           <div class="home-sci animate__animated animate__rotateInDownLeft animate__delay-2s">
-               <a class="animate__animated animate__pulse animate__infinite" href="https://wa.me/6289698941254"><i class='bx bxl-whatsapp'></i></a>
-               <a class="animate__animated animate__pulse animate__infinite" href="https://www.instagram.com/galanggg.s_"><i class='bx bxl-instagram'></i></a>
-               <a class="animate__animated animate__pulse animate__infinite" href="https://www.tiktok.com/@pejuang.istiqamah_"><i class='bx bxl-tiktok'></i></a>
-               <a class="animate__animated animate__pulse animate__infinite" href="https://github.com/galangggsyah"><i class='bx bxl-github'></i></a>
+               <a class="animate__animated animate__pulse animate__infinite" href="https://wa.me/6289698941254"><i
+                         class='bx bxl-whatsapp'></i></a>
+               <a class="animate__animated animate__pulse animate__infinite"
+                    href="https://www.instagram.com/galanggg.s_"><i class='bx bxl-instagram'></i></a>
+               <a class="animate__animated animate__pulse animate__infinite"
+                    href="https://www.tiktok.com/@pejuang.istiqamah_"><i class='bx bxl-tiktok'></i></a>
+               <a class="animate__animated animate__pulse animate__infinite" href="https://github.com/galangggsyah"><i
+                         class='bx bxl-github'></i></a>
           </div>
 
           <div class="home-imgHover"></div>
@@ -99,7 +234,8 @@
                     akrab :)"</p>
 
                <div class="btn-box btns">
-                    <a href="https://wa.me/6289698941254" class="btn animate__animated animate__pulse animate__infinite animate__delay-3s">Chat</a>
+                    <a href="https://wa.me/6289698941254"
+                         class="btn animate__animated animate__pulse animate__infinite animate__delay-3s">Chat</a>
                </div>
           </div>
      </section>
@@ -228,14 +364,18 @@
                                         class='bx bx-link-external'></i></a>
                          </div>
                     </div>
-                    <!-- <div class="port-box mix me">
+                    <div class="port-box mix all">
                          <div class="port-image">
-                              <img src="./assets/me6.jpg" alt="">
+                              <img src="./assets/hitam.jpg" alt="">
                          </div>
-                         <div class="port-content">
-                              <h3>Persiapan</h3>
-                              <p>"Persiapkan hari ini sebaik-baiknya untuk menghadapi hari esok yang baru ."</p>
-                              <a href="https://www.instagram.com/galanggg.s_"><i class='bx bx-link-external'></i></a>
+                         <div class="selengkapnya all">
+                              <h1><a href=""><i class='bx bx-image-add spesial' style="font-size: 50px;">Selengkapnya</i></a></h1>
+                         </div>
+                    </div>
+                    <!-- <div class="port-box mix all me school lainnya">
+                         <div class="port-image selengkapnya">
+                              <h1><a href="">Selengkapnya</a></h1>
+                              <i class='bx bx-image-add spesial' style="font-size: 50px;"></i>
                          </div>
                     </div> -->
                </div>
