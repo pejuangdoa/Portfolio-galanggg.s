@@ -829,6 +829,12 @@ h1,
      color: blue;
 }
 
+.lainnya-images {
+     display: flex;
+     justify-content: center;
+     padding-top: 2.5rem;
+}
+
 
 /* GALERY ENDEDDD !!!!!----------------------------------- */
 
@@ -841,6 +847,7 @@ h1,
 .contact {
      min-height: auto;
      padding-bottom: 7rem;
+     padding-top: 20rem;
 }
 
 .contact form {
