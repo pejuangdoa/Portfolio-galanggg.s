@@ -5,101 +5,13 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <title>Game Cacing</title>
-     <style>
-          body {
-               margin: 0;
-               background: #081b29;
-          }
-
-
-          .game-canvas {
-               width: 100%;
-               height: 100vw;
-               max-width: 500px;
-               max-height: 500px;
-               margin-left: auto;
-               margin-right: auto;
-          }
-
-          .keys {
-               font-family: 'Lato', sans-serif;
-               text-align: center;
-               width: 100%;
-               padding: 10px;
-               box-sizing: border-box;
-               height: 200px;
-               margin: auto;
-          }
-
-          .up {
-               position: relative;
-               top: -4px;
-          }
-
-          .chevron::before {
-               border-style: solid;
-               border-width: 8px 8px 0 0;
-               content: '';
-               display: inline-block;
-               height: 20px;
-               width: 20px;
-               top: -10px;
-               position: relative;
-               transform: rotate(-45deg);
-          }
-
-          .chevron.down::before {
-               transform: rotate(135deg);
-               top: -22px;
-          }
-
-          .chevron.right::before {
-               transform: rotate(45deg);
-               top: -18px;
-               left: -5px;
-          }
-
-          .chevron.left::before {
-               transform: rotate(225deg);
-               top: -18px;
-               left: 5px;
-          }
-
-          .arr {
-               cursor: pointer;
-               width: 70px;
-               height: 70px;
-               text-align: center;
-               line-height: 100px;
-               background: #081b29;
-               color: white;
-               font-size: 50px;
-               border-right: 10px solid #ccc;
-               border-bottom: 10px solid #ccc;
-               border-left: 10px solid #ddd;
-               border-top: 10px solid #eee;
-               display: inline-block;
-               margin: 5px;
-               transition: all .05s linear;
-               user-select: none;
-          }
-
-          .arr:active {
-               background: #555;
-          }
-
-          #game-container {
-               display: flex;
-               flex-direction: column;
-               background-color: #081b29;
-          }
-     </style>
+     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
      <div id="game-container">
           <div class="tombol" style="margin-top: 20px; margin-left: 50px; margin-bottom: 10px;">
-               <a href="index.html"
+               <a href="https://pejuangdoa.com/"
                     style="text-decoration: none; color: #000; background-color: orange; font-size: 25px; font-style: italic; font-weight: 700; border-radius: 20px; padding: 5px; ">back</a>
           </div>
           <canvas id="gc" class="game-canvas" width="400" height="400"></canvas>
