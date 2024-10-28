@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tic Tac Toe - Mode Teman atau Komputer</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+     <h1>Tic Tac Toe</h1>
+     <div id="score">Skor X : <span id="scoreX">0</span> | Skor O : <span id="scoreO">0</span></div>
+     <div id="mode-buttons">
+          <button class="mode-button" onclick="setGameMode('friend')">Main dengan Teman</button>
+          <button class="mode-button" onclick="setGameMode('computer')">Main dengan Komputer</button>
+     </div>
+     <div id="board" style="display: none;">
+          <div class="cell" onclick="makeMove(this, 0)"></div>
+          <div class="cell" onclick="makeMove(this, 1)"></div>
+          <div class="cell" onclick="makeMove(this, 2)"></div>
+          <div class="cell" onclick="makeMove(this, 3)"></div>
+          <div class="cell" onclick="makeMove(this, 4)"></div>
+          <div class="cell" onclick="makeMove(this, 5)"></div>
+          <div class="cell" onclick="makeMove(this, 6)"></div>
+          <div class="cell" onclick="makeMove(this, 7)"></div>
+          <div class="cell" onclick="makeMove(this, 8)"></div>
+     </div>
+     <div class="message" id="message">Pilih Mode Permainan</div>
+     <button class="restart" onclick="restartGame()">Mulai Ulang</button>
+     <button class="back-button" onclick="goBackToMenu()" style="display: none;">Kembali ke Menu</button>
+
+     <script src="main.js"></script>
+</body>
+
+</html>

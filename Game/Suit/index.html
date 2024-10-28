@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Game Suit (Batu, Gunting, Kertas)</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+     <h1>Game Suit (Batu, Gunting, Kertas)</h1>
+     <!-- Skor Pemain dan Komputer -->
+     <div class="scoreboard">
+          <div>Pemain: <span id="playerScore">0</span></div>
+          <div>Komputer: <span id="computerScore">0</span></div>
+     </div>
+     <!-- Pilihan Batu, Gunting, Kertas -->
+     <div class="choices">
+          <div class="button" onclick="playGame('batu')">✊<br><span>Batu</span></div>
+          <div class="button" onclick="playGame('gunting')">✌️<br><span>Gunting</span></div>
+          <div class="button" onclick="playGame('kertas')">✋<br><span>Kertas</span></div>
+     </div>
+     <!-- Tampilan hasil -->
+     <div class="choice-display" id="choiceDisplay">
+          <div><span>👤Kamu :</span> <span id="playerChoice"></span></div>
+          <div><span>🤖Komputer :</span> <span id="computerChoice"></span></div>
+     </div>
+
+     <div class="result" id="result"></div>
+
+     <script src="main.js"></script>
+</body>
+
+</html>

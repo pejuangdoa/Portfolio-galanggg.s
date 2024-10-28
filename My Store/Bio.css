@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+     margin: none;
+     padding: none;
+     font-family: 'Poppins', sans-serif;
+     box-sizing: border-box;
+     scroll-behavior: smooth;
+     list-style: none;
+     text-decoration: none;
+}
+
+
+body {
+     overflow: hidden;
+     background-image: url(./images/Backgroundmasjid.avif);
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+     margin: 0 auto;
+     height: 100vh;
+     max-width: 100%;
+}
+.container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin: 0 auto;
+     margin-top: 25px;
+     height: 100vh;
+}
+.profile {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+.img{
+     height: 150px;
+     width: 150px;
+     overflow: hidden;
+     border-radius: 50%;
+     border: 3px solid #ffff;
+     box-shadow: 0 2px 25px rgb(41, 180, 255);
+}
+img{
+     height: 100%;
+     width: 100%;
+}
+
+.profile span:nth-child(2) {
+     font-size: 1.5rem;
+     text-shadow: 0 2px 25px rgb(41, 180, 255);
+     font-weight: 700;
+     color: #ffff;
+}
+.icon{
+     vertical-align: middle;
+     margin-top: 2px;
+     margin-left: 2px;
+     fill: #0095f6;
+}
+.coffe{
+     vertical-align: middle;
+     fill: rgb(165, 141, 141);
+}
+.stifin{
+     vertical-align: middle;
+     fill: rgb(0, 255, 64);
+}
+.store{
+     vertical-align: middle;
+     fill: aqua;
+}
+.grup{
+     vertical-align: middle;
+     fill: rgb(0, 255, 0);
+}
+.profile span:nth-child(3) {
+     font-size: 1rem;
+     text-shadow: 0 2px 10px rgb(41, 180, 255);
+     font-weight: 600;
+     padding: 10px;
+     color: #fff;
+}
+
+.links {
+     display: flex;
+     height: 265px;
+     background-color: transparent;
+     flex-direction: column;
+     min-width: 100%;
+     padding-bottom: 7.5px;
+     padding-top: 5px;
+     align-items: center;
+     gap: 1rem;
+     overflow: scroll;
+}
+
+.links a{
+     font-size: 12px;
+}
+
+.item {
+     display: flex;
+     border: 2px solid #ffff;
+     width: 468px;
+     height: 50px;
+     align-items: center;
+     justify-content: space-between;
+     background-color: rgba(1, 13, 65, 0.689);
+     padding: 10px;
+     border-radius: 1.5rem;
+     color: #ffff;
+     box-shadow: 0 2px 10px rgb(41, 180, 255);
+     font-weight: 520;
+     font-size: 1.1rem;
+     transition: .3s;
+}
+.item:hover{
+     transform: scale(1.1);
+}
+.item-wrap {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+}
+.item-wrap div {
+     padding: 5px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: rgb(0, 0, 0);
+     border-radius: 1.1rem;
+}
+
+
+
+
+.footer p {
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     /* text-align: center; */
+}
+
+.jarak-kiri {
+     margin-left: 500px;
+}
+@media (width <= 468px){
+     .item {
+          width: 80%;
+          /* padding: 0 1rem; */
+     }
+     .profile .img {
+          width: 100px;
+          height: 100px;
+     }
+     .profile span:nth-child(2){
+          font-size: 1rem;
+     }
+     .profile span:nth-child(3){
+          font-size: .7rem;
+          text-align: center;
+     }
+     .icon{
+          width: 22px;
+          height: 22px;
+     }
+}
