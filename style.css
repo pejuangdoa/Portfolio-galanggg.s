@@ -62,6 +62,7 @@ ul {
      max-width: 1120px;
      margin-inline: 1.5rem;
 }
+
 .header {
      position: fixed;
      top: 0;
@@ -489,6 +490,7 @@ section {
      background: transparent;
      transition: 3s;
 }
+
 /* 
 .home-imgHover:hover {
      background: var(--bg-color);
@@ -689,7 +691,7 @@ span {
      grid-template-rows: 1fr auto;
      align-items: center;
      border: 2px solid var(--main-color);
-     box-shadow: cyan;
+     box-shadow: 0 4px 8px rgba(0, 255, 157, 0.5);
 }
 
 .port-image {
@@ -792,7 +794,7 @@ h1,
      margin: 5px 0 15px 0;
 }
 
-.selengkapnya a{
+.selengkapnya a {
      text-decoration: none;
      color: #fff;
 }
@@ -836,16 +838,138 @@ h1,
 }
 
 /* GALERI.html */
-.kembali-galeri{
+.kembali-galeri {
      padding-top: 5rem;
      padding-left: 5rem;
 }
-.gallery2{
+
+.gallery2 {
      margin-top: -5rem;
 }
 
 
 /* GALERY ENDEDDD !!!!!----------------------------------- */
+
+
+
+/* PROJECT */
+.container2 {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+     gap: 2rem;
+}
+
+.kotak-projeklink {
+     position: absolute;
+     bottom: 0;
+}
+
+.kotak-projeklink .btn-box {
+     width: 6.5rem;
+     height: 5rem;
+}
+
+.kotak-projeklink .btn-box.btns {
+     width: 15.7rem;
+}
+
+.kotak-projeklink .btn-box.btns a {
+     font-size: 12px;
+}
+
+.project-card {
+     border-radius: 10px;
+     overflow: hidden;
+     background-color: #00fe9d;
+     border: 2px solid var(--main-color);
+     text-align: center;
+     width: 325px;
+     height: 200px;
+     box-shadow: 0 4px 8px #00fe9d;
+     transition: transform 0.3s ease;
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.project-card:hover {
+     transform: scale(1.05);
+}
+
+.project-card img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     position: absolute;
+     top: 0;
+     left: 0;
+     filter: brightness(80%);
+     transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+     transform: scale(1.1);
+     transition: .6s;
+     animation-delay: 0.3s;
+}
+
+.project-card h3 {
+     position: absolute;
+     color: white;
+     top: 0;
+     font-size: 18px;
+     padding: 10px;
+}
+
+.project-card a {
+     position: absolute;
+     bottom: 10px;
+     background-color: #00fe9d;
+     color: #021e34;
+     text-decoration: none;
+     font-weight: bold;
+     border-radius: 5px;
+     padding: 8px 12px;
+     transition: background 0.3s;
+     border: 2px solid white;
+}
+
+.project-card a:hover {
+     background-color: #00c77a;
+}
+
+
+
+
+
+/* ENDED PROJECT */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
