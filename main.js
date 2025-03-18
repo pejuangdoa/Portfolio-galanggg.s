@@ -17,11 +17,11 @@ showMenu('nav-toggle', 'nav-menu')
 
 
 /* ----------------------------- project onclick ---------------------------- */
-var Project = document.querySelector('.project');
+// var Project = document.querySelector('.project');
 
-Project.onclick = () => {
-     alert('Mohon maaf halaman ini sedang dalam tahap perkembangan :)')
-}
+// Project.onclick = () => {
+//      alert('Mohon maaf halaman ini sedang dalam tahap perkembangan :)')
+// }
 
 /* ----------------------------- scroll sections ---------------------------- */
 let sections = document.querySelectorAll('section');
