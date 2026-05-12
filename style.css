@@ -280,6 +280,8 @@ header ul li {
           display: flex;
           column-gap: 3rem;
      }
+
+     /* Font Sizes navbar */
      .nav__list a {
           font-size: 1.5rem;
      }
@@ -289,6 +291,7 @@ header ul li {
      .nav__list .dropdown__item .nav__link i {
           font-size: 2rem;
      }
+     /* Font Sizes navbar ended */
 
      .nav__link {
           height: 100%;
