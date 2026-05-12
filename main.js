@@ -94,3 +94,31 @@ function success() {
           icon: "success",
      });
 }
+
+function cekPin() {
+  // Menghentikan link berjalan otomatis
+    event.preventDefault();
+
+    // PIN yang benar
+    const pinBenar = "1234";
+
+    // Input PIN
+    const pinInput = prompt("Masukkan PIN untuk membuka galeri:");
+
+    // Jika user cancel
+    if (pinInput === null) {
+        return;
+    }
+
+    // Jika PIN benar
+    if (pinInput === pinBenar) {
+
+        // Baru pindah halaman
+        window.location.href = "galeri.html";
+
+    } else {
+
+        // Jika salah
+        alert("PIN salah! Akses ditolak.");
+    }
+}
