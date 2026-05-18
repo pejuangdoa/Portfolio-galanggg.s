@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
+  text-decoration: none;
 }
 
 body {
@@ -64,7 +65,9 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-
+.card button a {
+  color:#000;
+}
 .card button:hover {
   background: #00d69a;
 }
