@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keahlian & Pengalaman | Portfolio Galang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #122e45;          /* latar section */
+    --bg-deep: #0a1c2e;     /* latar navbar / kartu gelap */
+    --card: #17374f;
+    --line: rgba(212, 197, 226, .16);
+    --accent: #00f59b;      /* hijau mint tombol & judul */
+    --title: #d4c5e2;       /* lavender judul */
+    --text: #e8eef4;
+    --muted: #9db3c6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Poppins', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ===== WRAPPER UTAMA ===== */
+  .skill-exp {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 90px 24px 100px;
+  }
+
+  .heading { text-align: center; margin-bottom: 64px; }
+  .heading h2 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--title);
+    line-height: 1.2;
+  }
+  .heading h2 span { color: var(--accent); }
+  .heading p { color: var(--muted); max-width: 520px; margin: 14px auto 0; }
+
+  .block { margin-bottom: 72px; }
+  .block:last-child { margin-bottom: 0; }
+  .block-title {
+    display: flex; align-items: center; gap: 16px;
+    font-size: 1.5rem; font-weight: 600; color: var(--title);
+    margin-bottom: 32px;
+  }
+  .block-title::after {
+    content: ""; flex: 1; height: 1px; background: var(--line);
+  }
+  .block-title i {
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 0 5px rgba(0, 245, 155, .18);
+  }
+
+  /* ===== KEAHLIAN ===== */
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+  }
+  .skill {
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px;
+    transition: border-color .25s, transform .25s;
+  }
+  .skill:hover { border-color: var(--accent); transform: translateY(-4px); }
+  .skill .ico {
+    width: 46px; height: 46px; border-radius: 50%;
+    border: 2px solid var(--accent);
+    display: grid; place-items: center;
+    margin-bottom: 16px; color: var(--accent);
+  }
+  .skill .ico svg { width: 22px; height: 22px; }
+  .skill h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 6px; }
+  .skill p { font-size: .9rem; color: var(--muted); }
+
+  /* ===== TIMELINE PENGALAMAN KERJA ===== */
+  .timeline { position: relative; padding-left: 34px; }
+  .timeline::before {
+    content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px;
+    width: 2px; background: linear-gradient(var(--accent), transparent);
+  }
+  .job {
+    position: relative;
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 28px;
+    margin-bottom: 24px;
+  }
+  .job:last-child { margin-bottom: 0; }
+  .job::before {
+    content: ""; position: absolute; left: -34px; top: 32px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--accent); border: 3px solid var(--bg);
+  }
+  .job-head {
+    display: flex; flex-wrap: wrap; justify-content: space-between;
+    gap: 6px 20px; margin-bottom: 14px;
+  }
+  .job h3 { font-size: 1.2rem; font-weight: 600; color: var(--title); }
+  .job .role { color: var(--accent); font-weight: 500; font-size: .95rem; }
+  .job .date {
+    font-size: .82rem; color: var(--muted);
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 2px 14px; align-self: flex-start; white-space: nowrap;
+  }
+  .job ul { list-style: none; display: grid; gap: 6px; }
+  .job li { position: relative; padding-left: 20px; color: var(--text); font-size: .95rem; }
+  .job li::before {
+    content: ""; position: absolute; left: 0; top: .7em;
+    width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+  }
+
+  /* ===== ORGANISASI ===== */
+  .orgs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 14px 20px;
+  }
+  .org {
+    background: var(--card);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 12px 12px 0;
+    padding: 14px 18px;
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .org strong { font-weight: 500; font-size: .95rem; }
+  .org small { color: var(--muted); font-size: .82rem; }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  @media (max-width: 600px) {
+    .skill-exp { padding: 64px 18px 72px; }
+    .timeline { padding-left: 26px; }
+    .job { padding: 20px 18px; }
+    .job::before { left: -26px; }
+    .orgs { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ====== Salin dari sini (div pembungkus) ke index.html jika ingin dijadikan section ====== -->
+<div class="skill-exp" id="keahlian">
+
+  <div class="heading">
+    <h2>Keahlian & <span>Pengalaman</span></h2>
+    <p>Kemampuan yang saya asah dan perjalanan saya di dunia kerja serta organisasi.</p>
+  </div>
+
+  <!-- KEAHLIAN -->
+  <section class="block">
+    <h3 class="block-title"><i></i>Kemampuan</h3>
+    <div class="skills">
+      <article class="skill">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Kepemimpinan Dasar</h3>
+        <p>Memimpin dan menggerakkan tim dalam kegiatan organisasi.</p>
+      </article>
+      <article class="skill">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg></div>
+        <h3>Public Speaking</h3>
+        <p>Terbiasa tampil dan menyampaikan gagasan di depan audiens.</p>
+      </article>
+      <article class="skill">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></div>
+        <h3>HTML, CSS & JavaScript</h3>
+        <p>Menguasai dasar pembuatan website yang rapi dan responsif.</p>
+      </article>
+      <article class="skill">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m10 9 5 3-5 3z"/></svg></div>
+        <h3>Editing Video & Foto</h3>
+        <p>Menguasai teknik dasar pengeditan secara inovatif.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PENGALAMAN KERJA -->
+  <section class="block">
+    <h3 class="block-title"><i></i>Pengalaman Kerja</h3>
+    <div class="timeline">
+
+      <article class="job">
+        <div class="job-head">
+          <div>
+            <h3>PT Prima Perkasa Teknik Indonesia</h3>
+            <div class="role">Magang/PKL SMK (Teknisi)</div>
+          </div>
+          <span class="date">25 Sep 2023 – 25 Des 2024</span>
+        </div>
+        <ul>
+          <li>Memproduksi Product ODC</li>
+          <li>Supporting Teknisi</li>
+          <li>Wiring Switch COS Panel</li>
+          <li>Installing optical cable</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <div>
+            <h3>STIFIn Mulia</h3>
+            <div class="role">Promotor STIFIn</div>
+          </div>
+          <span class="date">2023 – 2025</span>
+        </div>
+        <ul>
+          <li>Content Creator</li>
+          <li>Web Developer</li>
+          <li>Public Speaking</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ORGANISASI -->
+  <section class="block">
+    <h3 class="block-title"><i></i>Pengalaman Organisasi & Lain-lain</h3>
+    <div class="orgs">
+      <div class="org"><strong>Ketua Remaja Masjid Jami' Al-Insyirah</strong><small>2024 – 2025</small></div>
+      <div class="org"><strong>Kepemudaan Masjid Al-Muslimun</strong><small>2025 – Sekarang</small></div>
+      <div class="org"><strong>Volunteer Mainfull Playdate – Jejak Sujud</strong><small>8 Januari 2025</small></div>
+      <div class="org"><strong>Kepanitiaan Idul Adha Masjid Al-Musimun</strong><small>17 Juni 2024</small></div>
+      <div class="org"><strong>Saksi Pilkada Desa Sayang</strong><small>2024</small></div>
+      <div class="org"><strong>Karang Taruna</strong><small>2024</small></div>
+      <div class="org"><strong>Kepramukaan SMK</strong><small>2022 – 2025</small></div>
+      <div class="org"><strong>Dep Sosial Masyarakat KAMMI</strong><small>Kesatuan Aksi Mahasiswa Muslim Indonesia · 2025 – Sekarang</small></div>
+      <div class="org"><strong>Dep Sosial PIM</strong><small>Pelita Intan Muda, Indonesia · 2026 – Sekarang</small></div>
+      <div class="org"><strong>Divisi Ar-rizal KSI</strong><small>Kelompok Studi Islam, UKM Universitas Ma'soem · 2026/2027</small></div>
+      <div class="org"><strong>Divisi Humas KORPS PROTOKOLER</strong><small>UKM Universitas Ma'soem · 2026/2027</small></div>
+      <div class="org"><strong>Dep Kaderisasi Himpunan Mahasiswa Teknik</strong><small>Universitas Ma'soem · 2026/2027</small></div>
+      <div class="org"><strong>Peserta SSC 84</strong><small>Spiritual Salman Camp</small></div>
+      <div class="org"><strong>Peserta LMD 240</strong><small>Latihan Mujahid Dakwah</small></div>
+    </div>
+  </section>
+
+</div>
+<!-- ====== Akhir div pembungkus ====== -->
+
+</body>
+</html>
