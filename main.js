@@ -96,29 +96,38 @@ function success() {
 }
 
 function cekPin() {
-  // Menghentikan link berjalan otomatis
-    event.preventDefault();
+     // Menghentikan link berjalan otomatis
+     event.preventDefault();
 
-    // PIN yang benar
-    const pinBenar = "1234";
+     // PIN yang benar
+     const pinBenar = "1234";
 
-    // Input PIN
-    const pinInput = prompt("Masukkan PIN untuk membuka galeri:");
+     // Input PIN
+     const pinInput = prompt("Masukkan PIN untuk membuka galeri:");
 
-    // Jika user cancel
-    if (pinInput === null) {
-        return;
-    }
+     // Jika user cancel
+     if (pinInput === null) {
+          return;
+     }
 
-    // Jika PIN benar
-    if (pinInput === pinBenar) {
+     // Jika PIN benar
+     if (pinInput === pinBenar) {
 
-        // Baru pindah halaman
-        window.location.href = "galeri.html";
+          // Baru pindah halaman
+          window.location.href = "galeri.html";
 
-    } else {
+     } else {
 
-        // Jika salah
-        alert("PIN salah! Akses ditolak.");
-    }
+          // Jika salah
+          alert("PIN salah! Akses ditolak.");
+     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+     const cards = document.querySelectorAll('.tech-card');
+     cards.forEach(card => {
+          card.addEventListener('mouseenter', () => {
+               card.style.transition = 'all 0.25s ease-in-out';
+          });
+     });
+});
